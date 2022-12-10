@@ -109,10 +109,10 @@
             </div>
                 <li><a href="/">Home</a></li>
                 {{-- @if(\Illuminate\Support\Facades\Auth::user()->is_admin==1) --}}
-                <li><a href="{{ route('category')}}">Category</a></li>
+                <li><a href="{{ route('Category/index')}}">Category</a></li>
                 {{-- @endif --}}
-                <li><a href="{{ route('items')}}">Items</a></li>
-                <li><a href="{{ route('users')}}">Users</a></li>
+                <li><a href="{{ route('Book/index')}}">Books</a></li>
+                <li><a href="{{ route('User/index')}}">Users</a></li>
                 {{-- @if(\Illuminate\Support\Facades\Auth::user()->is_admin==1)
                 <li><a href="{{ url('Vendors/requests')}}">{{__('sidebar.vendorRequests')}}</a></li>
                   @endif
