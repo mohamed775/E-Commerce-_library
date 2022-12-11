@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\HTTP\Models;
+use GuzzleHttp\Middleware;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -29,7 +31,7 @@ Route::view('/admin', 'admin')->name('admin');
 // Route::view('/cart', 'cart')->name('cart');
 
         //   Category
-Route::get('Category/index', [App\Http\Controllers\CategoryController::class, 'index'])->name('Category/index')->middleware('auth');
+Route::get('Category/index', [App\Http\Controllers\CategoryController::class, 'index'])->name('Category/index')->middleware('auth:admin');
 Route::get('Category/create', [App\Http\Controllers\CategoryController::class, 'create'])->name('Category/create')->middleware('auth');
 Route::post('Category/store', [App\Http\Controllers\CategoryController::class, 'store'])->name('Category/store')->middleware('auth');
 Route::get('Category/edit/{id}', [App\Http\Controllers\CategoryController::class, 'edit'])->name('Category/edit')->middleware('auth');
@@ -53,4 +55,7 @@ Route::get('User/show/{id}', [App\Http\Controllers\UserController::class, 'show'
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->middleware('auth:admin')->name('home');
+
+Route::get('admin/login', [App\Http\Controllers\CustomAuthController::class, 'adminlogin'])->name('admin/login');
+Route::post('admin/login', [App\Http\Controllers\CustomAuthController::class, 'checkAdmin'])->name('check.admin');
