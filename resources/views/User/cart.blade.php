@@ -54,34 +54,33 @@
                 <th scope="col">Book</th>
                 <th scope="col">Price</th>
                 <th scope="col">Control</th>
-                <th scope="col">Check Out</th>
 
             </tr>
             </thead>
             <tbody class="table-light">
-                @foreach ($book as $book)
+                @forelse ($book as $book)
             <tr>
                 {{-- <th scope="row">1</th> --}}
-                <td>{{$book->name}}</td>
-                <td>{{$book->price}}</td>
+                <td>{{$book->book->name}}</td>
+                <td>{{$book->book->price}}</td>
                 <td>
-                    <a href="{{route('cart/delete',$book->cart_id)}}" onclick="return confirm('Are you sure? \n If you confirm you will remove this book from cart ...')" class="btn btn-danger">Delete</a>
+                    <a href="{{route('cart/delete',$book->id)}}" onclick="return confirm('Are you sure? \n If you confirm you will remove this book from cart ...')" class="btn btn-danger">Delete</a>
                 </td>
-                <td>
-                    <form action="{{ route('get-checkout') }}" method="POST">
-                        @csrf
-                        {{-- <p >Amount :  {{ $book->price }}</p> --}}
-                        <input type="hidden"name="amount" id="price" value="{{ $book->price }}">
-                        <button class="btn btn-secondary "id="checkout">Check Out  : {{ $book->price }}</button>
-                        {{-- <a href="{{  }}" >Buy</a> --}}
-                    </form>
-                </td>
+
             </tr>
-            @endforeach
+            @empty
+                <td>No books added to cart yet !</td>
+            @endforelse
             </tbody>
 
         </table>
-
+        <form action="{{ route('get-checkout') }}" method="POST">
+            @csrf
+            {{-- <p >Amount :  {{ $book->price }}</p> --}}
+            <input type="hidden"name="amount" id="price" value="{{ $total_price }}">
+            <button class="btn btn-secondary "id="checkout">Check Out  : {{ $total_price }}</button>
+            {{-- <a href="{{  }}" >Buy</a> --}}
+        </form>
     </div>
     <div class="col-md-4">
         @if(isset($success))
@@ -113,7 +112,6 @@
             url: "{{route('get-checkout')}}",
             data: {
                 amount: $('#price').val(),
-                book_id: '{{$book -> id}}',
             },
             success: function (data) {
                 if (data.status == true) {
