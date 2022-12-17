@@ -38,7 +38,7 @@ class MainHomeController extends Controller
         $book = Book::select()->where(function ($query) use ($search) {
             $query->where('name', 'LIKE', '%' . $search . '%');
         })->paginate(PAGINATION_COUNTER);   
-        return view('User.welcome',compact('book','category'));
+        return view('User.search',compact('book','category'));
     
     }
 

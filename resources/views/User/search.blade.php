@@ -18,7 +18,7 @@ body
 /*include*/
 .include
 {
-	background-image: url(image_main/static/back.jpeg);
+	background-image: url(image_main/photo/back.jpeg);
     background-repeat: no-repeat;
     background-size:cover;
 	width: 100%;
@@ -48,7 +48,7 @@ span{
 {
   background-color: #DEDCF0;
   width: 100%;
-  height: 2600px;
+  height: 600px;
   padding-top: 37px;
 
 }
@@ -414,11 +414,6 @@ hr
         </div>
       </nav>
 
-<div class="include">
- <div class="content">
- 	<p class="rrr">Reading <span>IS</span> LiFe</p>
- </div>
-</div>
 
 <div class="blog">
 	<div class="content">
@@ -451,26 +446,6 @@ hr
      </div>
 
 
-
-
-</div>
-
-
- <div class="footer">
-	<p>&copy; copyright by MOHAMED ZAKARYA</p>
-	<ul>
-	</ul><br>
-     <div class="web">
-       <a href="#"><img src="image_main/static/index1.png" class="img11" width="50px" height="50px" ></a>
-       <a href="#"><img src="image_main/static/ins.png" class="img11" width="50px" height="50px" ></a>
-       <a href="#"><img src="image_main/static/images.jpg" class="img11" width="50px" height="50px" ></a>
-
-     </div>
-
-     </div>
-        <main class="py-4">
-        </main>
-    </div>
 </body>
 </html>
 
