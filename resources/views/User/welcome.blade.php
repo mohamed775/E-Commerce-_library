@@ -414,11 +414,11 @@ hr
         </div>
       </nav>
 
-{{-- <div class="include">
+<div class="include">
  <div class="content">
  	<p class="rrr">Reading <span>IS</span> LiFe</p>
  </div>
-</div> --}}
+</div>
 
 <div class="blog">
 	<div class="content">
@@ -493,9 +493,6 @@ Bob Jackson read all 315 shortlisted books in the Booker Library in less than fo
  <div class="footer">
 	<p>&copy; copyright by MOHAMED ZAKARYA</p>
 	<ul>
-		<li>strong</li>
-		<li>skills</li>
-		<li>thinking</li>
 	</ul><br>
      <div class="web">
        <a href="#"><img src="image_main/photo/index1.png" class="img11" width="50px" height="50px" ></a>
@@ -505,27 +502,6 @@ Bob Jackson read all 315 shortlisted books in the Booker Library in less than fo
      </div>
 
      </div>
-
-
-<div class="bota">
-
-  <button onclick="document.getElementById('id01').style.display='block'">Log Out</button>
-  <div id="id01" class="modal">
-  <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">×</span>
-   <form class="modal-content" action="/action_page.php">
-    <div class="container">
-      <h1>Log Out From Page</h1>
-      <p>Are you sure you want to Log Out ?</p>
-
-      <div class="clearfix">
-        <button type="button" id="fun" class="deletebtn">Log Out</button>
-        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-
-      </div>
-    </div>
-   </form>
-  </div>
-</div>
         <main class="py-4">
         </main>
     </div>

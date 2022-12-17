@@ -58,8 +58,8 @@ class CategoryController extends Controller
     public function show($id)
     {
         //show books in category
-        $book=Book::select()->where('cat_id',$id)->paginate(PAGINATION_COUNTER);
-        return view('admin.book.index',compact('book'));
+        $books=Book::select()->where('cat_id',$id)->paginate(PAGINATION_COUNTER);
+        return view('admin.book.index',compact('books'));
     }
 
     /**

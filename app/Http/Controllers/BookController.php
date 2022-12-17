@@ -96,17 +96,14 @@ class BookController extends Controller
             'cat_id' => 'required',
         ]);
         //check old image
-        if ($request->image == null) {
-            $file_name = $request->old_image;
-        } 
-        else {
+
             $image = $request->file('image');
             // return $photo;
             $file_extention = $image->getClientOriginalName();
             $file_name = \Str::random(30) . $file_extention;
             $path = 'image_main/photo';
             $image->move($path, $file_name);
-        }
+        
         $book=Book::find($id)->update([
              'name'=>$request->name,
              'image'=>$file_name,

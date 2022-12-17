@@ -55,7 +55,6 @@ class MainHomeController extends Controller
         else
         {
             return redirect('login');
-        }
-        
+        }     
     }
 }

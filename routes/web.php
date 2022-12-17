@@ -27,8 +27,8 @@ define('PAGINATION_COUNTER',6);
         // admin 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->middleware('auth:admin')->name('home');
 
-Route::get('admin/login', [App\Http\Controllers\CustomAuthController::class, 'adminlogin'])->name('admin/login');
-Route::post('admin/login', [App\Http\Controllers\CustomAuthController::class, 'checkAdmin'])->name('check.admin');
+// Route::get('admin/login', [App\Http\Controllers\CustomAuthController::class, 'adminlogin'])->name('admin/login');
+// Route::post('admin/login', [App\Http\Controllers\CustomAuthController::class, 'checkAdmin'])->name('check.admin');
 
         //   Category
 Route::get('Category/index', [App\Http\Controllers\CategoryController::class, 'index'])->name('Category/index')->middleware('auth:admin');
@@ -55,21 +55,18 @@ Route::get('User/show/{id}', [App\Http\Controllers\UserController::class, 'show'
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->middleware('auth:admin')->name('home');
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->middleware('auth:admin')->name('home');
 
 Route::get('admin/login', [App\Http\Controllers\CustomAuthController::class, 'adminlogin'])->name('admin/login');
 Route::post('admin/login', [App\Http\Controllers\CustomAuthController::class, 'checkAdmin'])->name('check.admin');
 
 
-// Route::get('/', function () {
-//     return view('User/welcome');
-// });
-
 // user 
 Route::get('/', [App\Http\Controllers\MainHomeController::class, 'index'])->name('/main');
 Route::get('/books/{id}', [App\Http\Controllers\MainHomeController::class, 'show'])->name('/books');
 Route::get('book/search', [App\Http\Controllers\MainHomeController::class, 'search'])->name('book/search');
-// Route::get('book/search', [App\Http\Controllers\ShowBooksController::class, 'bookSearch'])->name('categorybook/search')->middleware('auth');
+
+//cart
 Route::post('addcart', [App\Http\Controllers\MainHomeController::class, 'addToCart'])->name('addcart')->middleware('auth');
 Route::get('/cart', [App\Http\Controllers\CartController::class, 'showOrder'])->name('/cart')->middleware('auth');
 Route::get('cart/delete/{id}', [App\Http\Controllers\CartController::class, 'deleteOrder'])->name('cart/delete')->middleware('auth');

@@ -131,7 +131,7 @@
 
 
 
-    @if(Auth::user())
+    {{-- @if(Auth::user()) --}}
     {{-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -165,7 +165,7 @@
 
         </div>
       </nav> --}}
-      @endif
+      {{-- @endif --}}
 
 <script>
     $(document).ready(function () {
