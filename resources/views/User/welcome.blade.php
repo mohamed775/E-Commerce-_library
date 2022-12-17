@@ -18,7 +18,7 @@ body
 /*include*/
 .include
 {
-	background-image: url(image_main/static/back.jpeg);
+	background-image: url('{{asset('image_main/static/back.jpeg')}}');
     background-repeat: no-repeat;
     background-size:cover;
 	width: 100%;
@@ -403,7 +403,7 @@ hr
           </li>
           
             <a href="{{route('/cart')}}" target="_blank">
-             <img src="image_main/static/Shopping_cart_icon.svg.png" width="35px" height="35px" class="ccart">
+             <img src="{{asset('image_main/static/Shopping_cart_icon.svg.png')}}" width="35px" height="35px" class="ccart">
             </a>
 
           <form class="form-inline my-2 my-lg-0" action="{{route('book/search')}}" method="GET">
@@ -461,9 +461,9 @@ hr
 	<ul>
 	</ul><br>
      <div class="web">
-       <a href="#"><img src="image_main/static/index1.png" class="img11" width="50px" height="50px" ></a>
-       <a href="#"><img src="image_main/static/ins.png" class="img11" width="50px" height="50px" ></a>
-       <a href="#"><img src="image_main/static/images.jpg" class="img11" width="50px" height="50px" ></a>
+       <a href="#"><img src="{{asset('image_main/static/index1.png')}}" class="img11" width="50px" height="50px" ></a>
+       <a href="#"><img src="{{asset('image_main/static/ins.png" class="img11')}}" width="50px" height="50px" ></a>
+       <a href="#"><img src="{{asset('image_main/static/images.jpg')}}" class="img11" width="50px" height="50px" ></a>
 
      </div>
 

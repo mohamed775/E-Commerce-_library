@@ -403,7 +403,7 @@ hr
           </li>
           
             <a href="{{route('/cart')}}" target="_blank">
-             <img src="image_main/static/Shopping_cart_icon.svg.png" width="35px" height="35px" class="ccart">
+             <img src="{{asset('image_main/static/Shopping_cart_icon.svg.png')}}" width="35px" height="35px" class="ccart">
             </a>
 
           <form class="form-inline my-2 my-lg-0" action="{{route('book/search')}}" method="GET">
