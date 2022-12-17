@@ -104,7 +104,7 @@
               <ul class="nav sidebar-nav">
                 <div class="sidebar-header">
                 <div class="sidebar-brand">
-                  <h3>Gallery</h3>
+                  <h3>MyBook</h3>
                 </div>
             </div>
                 <li><a href="/">Home</a></li>
