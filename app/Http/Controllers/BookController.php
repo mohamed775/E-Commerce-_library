@@ -16,8 +16,8 @@ class BookController extends Controller
      */
     public function index()
     {
-        $book = Book::select()->paginate(PAGINATION_COUNTER);
-        return view('admin.Book.index',compact('book'));
+        $books = Book::select()->paginate(PAGINATION_COUNTER);
+        return view('admin.Book.index',compact('books'));
     }
 
     /**
@@ -52,7 +52,7 @@ class BookController extends Controller
 
         $file_extention = $image->getClientOriginalName();
         $file_name = \Str::random(30) . $file_extention;
-        $path = 'image/album';
+        $path = 'image_main/photo';
         $image->move($path, $file_name);
 
         Book::create([
@@ -104,7 +104,7 @@ class BookController extends Controller
             // return $photo;
             $file_extention = $image->getClientOriginalName();
             $file_name = \Str::random(30) . $file_extention;
-            $path = 'image/album';
+            $path = 'image_main/photo';
             $image->move($path, $file_name);
         }
         $book=Book::find($id)->update([
@@ -128,4 +128,5 @@ class BookController extends Controller
         $book=Book::find($id)->delete();
         return redirect()->route('Book/index')->with('success', __('messages.Deleted'));
     }
+
 }

@@ -20,8 +20,13 @@ class Book extends Model
         return $this->belongsTo(Category::class ,'category_id');
     }
 
-    public function User()
+    public function Cart()
     {
-        return $this->belongsTo(User::class ,'user_id');
+        return $this->belongsTo(Cart::class);
     }
+
+    // public function User()
+    // {
+    //     return $this->belongsTo(User::class ,'user_id');
+    // }
 }

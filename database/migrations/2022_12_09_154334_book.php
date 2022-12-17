@@ -20,7 +20,7 @@ class Book extends Migration
             $table->string('author');
             $table->string('image');
             $table->bigInteger('cat_id')->unsigned();
-            $table->bigInteger('user_id')->unsigned();
+            // $table->bigInteger('user_id')->unsigned();
             $table->softDeletes();
             $table->timestamps();
         
@@ -29,10 +29,10 @@ class Book extends Migration
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
 
-            $table->foreign('user_id')
-                ->references('id')->on('users')
-                ->onDelete('cascade')
-                ->onUpdate('cascade');
+            // $table->foreign('user_id')
+            //     ->references('id')->on('users')
+            //     ->onDelete('cascade')
+            //     ->onUpdate('cascade');
         });
     }
 

@@ -23,11 +23,11 @@
             </tr>
             </thead>
             <tbody class="table-light">
-            @foreach ($book as $book)
+            @foreach ($books as $book)
                 <tr>
                     <th scope="row">{{$book->id}}</th>
                     <td>{{$book->name}}</td>
-                    <td><img src="{{ asset('storage/'. $book->image) }}" width="50" height="50"
+                    <td><img src="{{ asset('image_main/photo/'. $book->image) }}" width="50" height="50"
                         alt=""></td>
                     <td>{{$book->price}}</td>
                     <td>{{$book->author}}</td>
@@ -46,6 +46,9 @@
             </tbody>
         </table>
         <a href="{{ route('Book/create') }}" class="btn btn-secondary ">Add New Book</a>
+        <div class="d-flex justify-content-center">
+            {!! $books->links() !!}
+        </div>
     </div>
 </div>
 </div>

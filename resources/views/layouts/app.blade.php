@@ -43,7 +43,7 @@
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a  href="/">
-                    <img style="width: 160px" src="{{ asset('images/logo.png')}}" alt="Booky logo" />
+                    <img style="width: 160px" src="{{ asset('image_main/photo/logo.png')}}" alt="Booky logo" />
                 </a>
                 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -95,7 +95,7 @@
             </div>
         </nav>
 
-        @if (\Illuminate\Support\Facades\Auth::user())
+        @if (auth()->guard('admin')->user())
         <div id="wrapper">
             <div class="overlay"></div>
 
@@ -108,15 +108,10 @@
                 </div>
             </div>
                 <li><a href="/">Home</a></li>
-                {{-- @if(\Illuminate\Support\Facades\Auth::user()->is_admin==1) --}}
                 <li><a href="{{ route('Category/index')}}">Category</a></li>
-                {{-- @endif --}}
                 <li><a href="{{ route('Book/index')}}">Books</a></li>
                 <li><a href="{{ route('User/index')}}">Users</a></li>
-                {{-- @if(\Illuminate\Support\Facades\Auth::user()->is_admin==1)
-                <li><a href="{{ url('Vendors/requests')}}">{{__('sidebar.vendorRequests')}}</a></li>
-                  @endif
-               <li><a href="{{ route('profile/dashboard')}}">{{__('sidebar.Profile')}}</a></li> --}}
+
                </ul>
            </nav>
 
@@ -134,6 +129,43 @@
 @endif
 
 
+
+
+    @if(Auth::user())
+    {{-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+           <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="{{route('/main')}}" target="_blank">HOME</a>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Categories
+              </a>
+            
+            
+              <ul class="dropdown-menu">
+                @foreach($category as $category)
+                <li><a class="dropdown-item" href="{{route('/books',$category->id)}}">{{$category->name}}</a></li>
+                @endforeach
+              </ul>
+    
+          </li>
+          
+            <a href="{{route('/cart')}}" target="_blank">
+             <img src="image_main/photo/Shopping_cart_icon.svg.png" width="35px" height="35px" class="ccart">
+            </a>
+
+          <form class="form-inline my-2 my-lg-0" action="{{route('book/search')}}" method="GET">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+
+        </div>
+      </nav> --}}
+      @endif
 
 <script>
     $(document).ready(function () {

@@ -237,7 +237,7 @@ button{
         <button type="submit">
             {{ __('Login') }}
         </button>
-        <a class="admin" href="{{ route('admin') }}">Login as Admin</a>
+        <a class="admin" href="{{ route('admin/login') }}">Login as Admin</a>
         {{-- @if (Route::has('password.request'))
             <a class="btn btn-link" href="{{ route('password.request') }}">
                  {{ __('Forgot Your Password?') }}
