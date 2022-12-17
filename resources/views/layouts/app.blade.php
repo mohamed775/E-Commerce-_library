@@ -19,8 +19,8 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    
-    
+
+
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
     integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
@@ -32,7 +32,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
 
     <link href="{{ asset('css/sidebar.css') }}"rel="stylesheet">
-    
+
 
 
     <!-- Styles -->
@@ -45,7 +45,7 @@
                 <a  href="/">
                     <img style="width: 160px" src="{{ asset('image_main/static/logo.png')}}" alt="Booky logo" />
                 </a>
-                
+
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -144,16 +144,16 @@
               <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Categories
               </a>
-            
-            
+
+
               <ul class="dropdown-menu">
                 @foreach($category as $category)
                 <li><a class="dropdown-item" href="{{route('/books',$category->id)}}">{{$category->name}}</a></li>
                 @endforeach
               </ul>
-    
+
           </li>
-          
+
             <a href="{{route('/cart')}}" target="_blank">
              <img src="image_main/photo/Shopping_cart_icon.svg.png" width="35px" height="35px" class="ccart">
             </a>
@@ -205,5 +205,6 @@
             @yield('content')
         </main>
     </div>
+@yield('scripts')
 </body>
 </html>
