@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\paymentController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\HTTP\Models;
@@ -24,7 +25,7 @@ define('PAGINATION_COUNTER',6);
 //     return view('User/welcome');
 // });
 
-        // admin 
+        // admin
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->middleware('auth:admin')->name('home');
 
 // Route::get('admin/login', [App\Http\Controllers\CustomAuthController::class, 'adminlogin'])->name('admin/login');
@@ -61,7 +62,7 @@ Route::get('admin/login', [App\Http\Controllers\CustomAuthController::class, 'ad
 Route::post('admin/login', [App\Http\Controllers\CustomAuthController::class, 'checkAdmin'])->name('check.admin');
 
 
-// user 
+// user
 Route::get('/', [App\Http\Controllers\MainHomeController::class, 'index'])->name('/main');
 Route::get('/books/{id}', [App\Http\Controllers\MainHomeController::class, 'show'])->name('/books');
 Route::get('book/search', [App\Http\Controllers\MainHomeController::class, 'search'])->name('book/search');
@@ -70,3 +71,6 @@ Route::get('book/search', [App\Http\Controllers\MainHomeController::class, 'sear
 Route::post('addcart', [App\Http\Controllers\MainHomeController::class, 'addToCart'])->name('addcart')->middleware('auth');
 Route::get('/cart', [App\Http\Controllers\CartController::class, 'showOrder'])->name('/cart')->middleware('auth');
 Route::get('cart/delete/{id}', [App\Http\Controllers\CartController::class, 'deleteOrder'])->name('cart/delete')->middleware('auth');
+//payment
+Route::get('get-checkout',[paymentController::class,'checkOut'])->name('get-checkout')->middleware('auth');
+Route::get('storeTransaction',[paymentController::class,'storeTransaction'])->name('storeTransaction')->middleware('auth');
