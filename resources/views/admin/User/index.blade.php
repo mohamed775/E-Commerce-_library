@@ -28,7 +28,7 @@
                     <td>{{$user->email}}</td>
                     <td>
                         <a href="{{ route('User/delete',$user->id) }}" onclick="return confirm('Are you sure? \n If you confirm you will remove this user ...')" class="btn btn-danger">Delete</a>
-                        <a href="{{ route('User/show',$user->id) }}" class="btn btn-primary">View Details</a>
+                        {{-- <a href="{{ route('User/show',$user->id) }}" class="btn btn-primary">View Details</a> --}}
                     </td>
                 </tr>
              @endforeach

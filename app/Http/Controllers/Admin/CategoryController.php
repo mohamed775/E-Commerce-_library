@@ -1,6 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
+
+use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\Book;
 use Illuminate\Http\Request;
@@ -37,10 +39,7 @@ class CategoryController extends Controller
     public function store(Request $request)
     {
         //validation
-        $this->validate($request,[
-            'name'=>['required','Max:255']
-        ]);
-
+        $validation = $this->validation();
         //store in database
         Category::create([
             'name'=>$request->name,
@@ -84,9 +83,7 @@ class CategoryController extends Controller
     public function update(Request $request, $id)
     {
          //validation
-         $this->validate($request,[
-            'name'=>['required','Max:255']
-        ]);
+         $validation = $this->validation();
 
         //store in database
         $category=Category::find($id)->update([
@@ -105,5 +102,12 @@ class CategoryController extends Controller
     {
         $category=Category::find($id)->delete();
         return redirect()->route('Category/index')->with('success', __('messages.Deleted'));
+    }
+
+    protected function validation()
+    {
+        $validation=[
+            'name'=>['required','Max:50']
+        ];
     }
 }

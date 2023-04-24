@@ -46,9 +46,9 @@
             </tbody>
         </table>
         <a href="{{ route('Book/create') }}" class="btn btn-secondary ">Add New Book</a>
-        <div class="d-flex justify-content-center">
+       {{-- <div class="d-flex justify-content-center">
             {!! $books->links() !!}
-        </div>
+        </div>--}}
     </div>
 </div>
 </div>

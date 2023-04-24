@@ -1,6 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
+
+use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\Book;
 use Illuminate\Http\Request;
@@ -39,17 +41,10 @@ class BookController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request,[
-            'name'=>['required','Max:255'],
-            'image'=>'required|image|mimes:jpeg,png,jpg,gif,svg',
-            'price' => 'required',
-            'author' =>['required','Max:255'],
-            'cat_id' => 'required',
-        ]);
+        $validation = $this->validation();
         // return $request;
         $image = $request->file('image');
         // return $photo;
-
         $file_extention = $image->getClientOriginalName();
         $file_name = \Str::random(30) . $file_extention;
         $path = 'image_main/photo';
@@ -88,13 +83,7 @@ class BookController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $this->validate($request,[
-            'name'=>['required','Max:255'],
-            'image'=>'required|image|mimes:jpeg,png,jpg,gif,svg',
-            'price' => 'required',
-            'author' =>['required','Max:255'],
-            'cat_id' => 'required',
-        ]);
+        $validation = $this->validation();
         //check old image
 
             $image = $request->file('image');
@@ -126,4 +115,15 @@ class BookController extends Controller
         return redirect()->route('Book/index')->with('success', __('messages.Deleted'));
     }
 
+
+    protected function validation()
+    {
+        $validation=[
+            'name'=>['required','Max:255'],
+            'image'=>'required|image|mimes:jpeg,png,jpg,gif,svg',
+            'price' => 'required',
+            'author' =>['required','Max:255'],
+            'cat_id' => 'required',
+        ];
+    }
 }

@@ -48,7 +48,7 @@ span{
 {
   background-color: #DEDCF0;
   width: 100%;
-  height: 2600px;
+  height: 1700px;
   padding-top: 37px;
 
 }
@@ -462,7 +462,7 @@ hr
 	</ul><br>
      <div class="web">
        <a href="#"><img src="{{asset('image_main/static/index1.png')}}" class="img11" width="50px" height="50px" ></a>
-       <a href="#"><img src="{{asset('image_main/static/ins.png" class="img11')}}" width="50px" height="50px" ></a>
+       <a href="#"><img src="{{asset('image_main/static/ins.png')}}" width="50px" height="50px" ></a>
        <a href="#"><img src="{{asset('image_main/static/images.jpg')}}" class="img11" width="50px" height="50px" ></a>
 
      </div>

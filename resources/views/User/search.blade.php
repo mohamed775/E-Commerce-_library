@@ -48,7 +48,7 @@ span{
 {
   background-color: #DEDCF0;
   width: 100%;
-  height: 600px;
+  height: 450px;
   padding-top: 37px;
 
 }
