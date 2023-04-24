@@ -47,18 +47,6 @@
                 </div>
             </div>
         </div>
-    
-                {{-- <div class="col-md-6">
-                    <div class="card" style="width:100%;margin-bottom: 50px;">
-                        <div class="card-header" style="text-align: center;font-size: 25px;font-weight: bold;color:#817e7e">
-                            Sales
-                        </div>
-                        <div class="card-body" style="text-align: center;">
-                            <a href="/"
-                               style="text-decoration:none; font-size: 25px;font-weight: bold;color:#000;">0</a>
-                        </div>
-                    </div>
-                </div> --}}
     </div>
 </div>
 

@@ -1,0 +1,369 @@
+
+body
+{
+	margin: 0;
+}
+
+.content
+{
+  margin: auto;
+  width: 1400px;
+}
+
+/*include*/
+.include
+{
+	background-image: url('image_main/static/back.jpeg');
+    background-repeat: no-repeat;
+    background-size:cover;
+	width: 100%;
+	height: 900px;
+
+}
+
+.include .rrr
+{
+  margin: 0px;
+  font-size: 80px;
+  font-weight: bold;
+  text-align: center;
+  padding-top: 200px;
+  padding-left: 10px;
+  font-family: tahoma;
+  color: white;
+
+}
+span{
+    color:red;
+}
+
+/*blog*/
+
+.blog
+{
+  background-color: #DEDCF0;
+  width: 100%;
+  height: 1700px;
+  padding-top: 37px;
+
+}
+
+.blog .part
+{
+  width: 21%;
+  height: 360px;
+  background: #fff;
+  margin: 0;
+  border-radius: 10px;
+  float: left;
+  margin-left:45px;
+  margin-bottom: 40px;
+  padding-top: 10px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.part:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.flip-card-front {
+  background-color: #bbb;
+  color: black;
+}
+
+.flip-card-back {
+  background-color: #2980b9;
+  color: white;
+  transform: rotateY(180deg);
+}
+.flip-card-back h1,h2,p{
+    margin-top:30px;
+}
+.flip-card-back p{
+    margin-top:100px;
+}
+
+.button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: #555;
+  background-color: #fff;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+    margin-top: 15px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.button:hover {
+  background-color: #555;
+    color: #fff;
+}
+
+
+
+
+.blog .writing1
+{
+	width: 35%;
+    margin-left: 100px;
+	height: 50px;
+	padding-top: 70px;
+	color: #222;
+	padding-left: 120px;
+    float: left;
+}
+
+.blog .writing1 p
+{
+	font-family: tahoma;
+}
+
+.blog .writing2
+{
+	width: 35%;
+	height: 50px;
+	padding-top: 70px;
+	color: #222;
+	padding-left: 120px;
+    float: left;
+}
+
+
+.blog .writing2 p
+{
+	font-family: tahoma;
+}
+
+hr
+{
+	color: #fff;
+}
+
+.blog .writing3
+{
+    margin-left: 100px;
+    margin-top: 50px;
+	width: 35%;
+	height: 50px;
+	padding-top: 140px;
+	color: #222;
+	padding-left: 120px;
+    float: left;
+}
+
+.blog .writing3 p
+{
+	font-family: tahoma;
+}
+
+.blog .writing4
+{
+    margin-top: 50px;
+	width: 35%;
+	height: 50px;
+	padding-top: 140px;
+	color: #222;
+	padding-left: 120px;
+    float: left;
+}
+
+.blog .writing4 p
+{
+	font-family: tahoma;
+}
+
+.footer
+{
+	width: 100%;
+	height: 230px;
+	background: #222;
+	padding-top: 20px;
+	padding-bottom: 20px;
+    text-align: center;
+}
+
+.footer ul
+{
+    text-align: center;
+	color: #fff;
+	padding-left: 30px;
+	font-family: cursive;
+}
+
+.footer p
+{
+	text-align: center;
+	color: #fff;
+	font-family: tahoma;
+	font-size: 20px;
+}
+
+.footer ul li
+{
+  list-style-position: inside;
+  color: #fff;
+
+}
+
+.footer i
+{
+   color: #ff0000;
+}
+.web a{
+
+    padding: 5px;
+}
+
+.bota{
+    width: 100%;
+    height: 120px;
+    background-color:#222;
+}
+.bota button {
+  background-color:lightgray;
+  color: black;
+  padding: 14px 20px;
+  margin-left:46.4% ;
+    margin-top: 30px;
+  border: 3px solid #fff;
+  cursor: pointer;
+  width: 150px;
+  opacity: 0.9;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.bota button:hover {
+  opacity:1;
+    font-size: 25px;
+    font-weight: bolder;
+      background-color:#fff;
+  color:#f44336 ;
+}
+
+ .bota .deletebtn {
+  width: 40%;
+     margin-left: 5px;
+}
+
+ .bota .cancelbtn {
+     width: 40%;
+  background-color: #ccc;
+  color: black;
+     margin-left: 5px;
+}
+.bota .cancelbtn:hover{
+      background-color:black;
+  color: #ccc;
+}
+
+ .bota .deletebtn {
+  background-color: #f44336;
+}
+ .bota .deletebtn:hover {
+  background-color:#ccc ;
+     color: #f44336;
+}
+
+ .bota .container {
+  padding: 16px;
+  text-align: center;
+}
+
+ .bota .modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: #474e5d;
+  padding-top: 50px;
+}
+
+ .bota .modal-content {
+  background-color: #fefefe;
+  margin: 5% auto 15% auto;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+
+ .bota hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+
+ .bota .close {
+  position: absolute;
+  right: 35px;
+  top: 15px;
+  font-size: 40px;
+  font-weight: bold;
+  color: #f1f1f1;
+}
+
+ .bota .close:hover,
+.close:focus {
+  color: #f44336;
+  cursor: pointer;
+}
+
+
+ .bota .clearfix:after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+@media screen and (max-width: 300px) {
+ .bota .cancelbtn, .deletebtn {
+     width: 100%;
+  }
+}
+
+/* .w , .ww , .www , .wwww {
+    display:
+} */
+.aw{
+    display: block;
+}
+
+.img11{
+    border: 2px solid #fff;
+    border-radius: 45%;
+    opacity: 0.8;
+}
+.img11:hover{
+
+    border-radius: 10%;
+    opacity:1;
+
+}
+.web{
+    margin-left: 40px;
+}
