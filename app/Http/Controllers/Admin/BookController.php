@@ -8,7 +8,7 @@ use App\Models\Book;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rule;
-
+use Illuminate\Support\Str;
 class BookController extends Controller
 {
     /**
@@ -46,7 +46,7 @@ class BookController extends Controller
         $image = $request->file('image');
         // return $photo;
         $file_extention = $image->getClientOriginalName();
-        $file_name = \Str::random(30) . $file_extention;
+        $file_name = Str::random(30) . $file_extention;
         $path = 'image_main/photo';
         $image->move($path, $file_name);
 
@@ -89,7 +89,7 @@ class BookController extends Controller
             $image = $request->file('image');
             // return $photo;
             $file_extention = $image->getClientOriginalName();
-            $file_name = \Str::random(30) . $file_extention;
+            $file_name = Str::random(30) . $file_extention;
             $path = 'image_main/photo';
             $image->move($path, $file_name);
         
