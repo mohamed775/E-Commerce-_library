@@ -13,8 +13,8 @@ body
 /*include*/
 .include
 {
-	  background-image:url('public/image_main/static/img1.jpg');
-    background-color: #474e5d;
+	  background-image: url('/image_main/static/backimg.jpeg');
+    /* background-color: #474e5d; */
     background-repeat: no-repeat;
     background-size:cover;
 	  width: 100%;
